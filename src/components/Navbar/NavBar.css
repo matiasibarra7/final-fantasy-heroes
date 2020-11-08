@@ -1,0 +1,10 @@
+ul {
+  display: flex;
+  width: 100%;
+}
+
+ul .element {
+  margin: 0 auto;
+  color: green;
+}
+
