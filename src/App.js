@@ -14,7 +14,7 @@ function App() {
         <Navbar />
       </header>
 
-      <div style={{maxWidth: "1280px", backgroundColor: "lightblue", margin: "0 auto"}}>
+      <div className="container-zone">
         <Switch >
           <Route path="/section-2/:id" component= { Section2 }></Route>
           <Route path="/section-2" component= { Section2 }></Route>

@@ -26,3 +26,8 @@
 .name {
   text-align: center;
 }
+
+.searcher-heroes {
+  width: 33%;
+  max-width: 240px;
+}

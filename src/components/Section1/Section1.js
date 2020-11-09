@@ -5,7 +5,10 @@ import './section1.css'
 function Section1 () {
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
-  const [items, setItems] = useState([]);
+  const [itemsToShow, setItems] = useState([]);
+  const [allItems, setAllItems] = useState([]);
+  
+
 
 
   // esta función de efecto actua como componentDidMount
@@ -14,6 +17,9 @@ function Section1 () {
       .then(res => res.json())
       .then(
         (characters) => {
+          if (!isLoaded) {
+            setAllItems(characters)
+          }
           setIsLoaded(true);
           setItems(characters);
         },
@@ -25,18 +31,39 @@ function Section1 () {
           setError(error);
         }
       )
-  }, [])
+  }, []);
 
+  function searchHero() {
+    const searcher = document.getElementById('searcherHeroes');
+    const word = searcher.value.toLowerCase(); // Convierto a lowerCase para poder hacer una busqueda case insensitive
+
+    const found = allItems.filter(hero => {
+      return hero.name.toLowerCase().includes(word) // Convierto a lowerCase para poder hacer una busqueda case insensitive
+    });
+
+    // Si hay algo escrito en el buscador, muestro los encontrados
+    if (word !== '') {
+      setItems(found);
+
+      // Si no hay nada en el buscador, muestro todos
+    } else {
+      setItems(allItems)
+    }
+  };
 
   if (error) {
     return <div>Error: {error.message}</div>;
   } else if (!isLoaded) {
-    return <div>Loading...</div>;
+    return <div className="loader"></div>;
   } else {
     return (
       <>
+        <div style={{width: '100%', padding: '1rem'}}>
+          <h3>Buscador</h3>
+          <input className="searcher-heroes" id="searcherHeroes" onKeyUp={searchHero}/>
+        </div>
         <div className="characters-container">
-          {items.map(item => {
+          {itemsToShow.map(item => {
             return (
               <Link to={`/section-2/${item.id}`} key={item.id} className="character-card">
                 <figure className="avatar">
