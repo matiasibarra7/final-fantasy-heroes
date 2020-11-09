@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/nahuel-react-ff-api/static/css/main.510de9de.chunk.css",
-    "main.js": "/nahuel-react-ff-api/static/js/main.a3f7e14e.chunk.js",
-    "main.js.map": "/nahuel-react-ff-api/static/js/main.a3f7e14e.chunk.js.map",
+    "main.css": "/nahuel-react-ff-api/static/css/main.38c75594.chunk.css",
+    "main.js": "/nahuel-react-ff-api/static/js/main.acede926.chunk.js",
+    "main.js.map": "/nahuel-react-ff-api/static/js/main.acede926.chunk.js.map",
     "runtime-main.js": "/nahuel-react-ff-api/static/js/runtime-main.8dbd5123.js",
     "runtime-main.js.map": "/nahuel-react-ff-api/static/js/runtime-main.8dbd5123.js.map",
     "static/js/2.8a6e29cd.chunk.js": "/nahuel-react-ff-api/static/js/2.8a6e29cd.chunk.js",
     "static/js/2.8a6e29cd.chunk.js.map": "/nahuel-react-ff-api/static/js/2.8a6e29cd.chunk.js.map",
     "index.html": "/nahuel-react-ff-api/index.html",
-    "static/css/main.510de9de.chunk.css.map": "/nahuel-react-ff-api/static/css/main.510de9de.chunk.css.map",
+    "static/css/main.38c75594.chunk.css.map": "/nahuel-react-ff-api/static/css/main.38c75594.chunk.css.map",
     "static/js/2.8a6e29cd.chunk.js.LICENSE.txt": "/nahuel-react-ff-api/static/js/2.8a6e29cd.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.8dbd5123.js",
     "static/js/2.8a6e29cd.chunk.js",
-    "static/css/main.510de9de.chunk.css",
-    "static/js/main.a3f7e14e.chunk.js"
+    "static/css/main.38c75594.chunk.css",
+    "static/js/main.acede926.chunk.js"
   ]
 }
