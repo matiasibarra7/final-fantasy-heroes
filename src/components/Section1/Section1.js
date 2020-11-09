@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import { Link } from 'react-router-dom';
 import './section1.css'
 
 function Section1 () {
@@ -37,8 +38,8 @@ function Section1 () {
         <div className="characters-container">
           {items.map(item => {
             return (
-              <div key={item.id} className="character-card">
-                <figure>
+              <Link to={`/section-2/${item.id}`} key={item.id} className="character-card">
+                <figure className="avatar">
                   {item.pictures.length?
                     <img src={item.pictures[0].url} alt={item.name}/> :
                     <div>Non Picture</div>
@@ -47,7 +48,7 @@ function Section1 () {
                 <div className="name">
                   {item.name}
                 </div>
-              </div>
+              </Link>
             )
           })}
         </div>

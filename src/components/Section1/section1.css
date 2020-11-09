@@ -1,9 +1,9 @@
-figure {
+.avatar {
   width: 48px;
   border: 1px solid black;
 }
 
-figure img {
+.avatar img {
   width: 100%;
 }
 

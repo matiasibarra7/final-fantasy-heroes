@@ -1,5 +1,5 @@
-figure {
-  width: 48px;
+.portrait {
+  max-width: 240px;
   border: 1px solid black;
 }
 
@@ -8,21 +8,12 @@ figure img {
 }
 
 
-.characters-container {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.character-card {
+.character-container {
   display: flex;
   flex-direction: column;
-  margin: 0 auto;
+  padding: 0 1rem 1rem;
 }
 
-.character-card:hover {
-  box-shadow: 0px 0px 10px rgb(100, 100, 100);
-}
-
-.name {
-  text-align: center;
+.attr-title {
+  font-weight: bold;
 }
