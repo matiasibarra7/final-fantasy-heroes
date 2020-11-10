@@ -34,8 +34,8 @@ function Section1 () {
   }, []);
 
   function searchHero() {
-    const searcher = document.getElementById('searcherHeroes');
-    const word = searcher.value.toLowerCase(); // Convierto a lowerCase para poder hacer una busqueda case insensitive
+    const seeker = document.getElementById('heroSeeker');
+    const word = seeker.value.toLowerCase(); // Convierto a lowerCase para poder hacer una busqueda case insensitive
 
     const found = allItems.filter(hero => {
       return hero.name.toLowerCase().includes(word) // Convierto a lowerCase para poder hacer una busqueda case insensitive
@@ -59,13 +59,13 @@ function Section1 () {
     return (
       <>
         <div style={{width: '100%', padding: '1rem'}}>
-          <h3>Buscador</h3>
-          <input className="searcher-heroes" id="searcherHeroes" onKeyUp={searchHero}/>
+          <h3>Search</h3>
+          <input className="hero-seeker" id="heroSeeker" onKeyUp={searchHero} placeholder="Type to search a Hero"/>
         </div>
         <div className="characters-container">
           {itemsToShow.map(item => {
             return (
-              <Link to={`/section-2/${item.id}`} key={item.id} className="character-card">
+              <Link to={`/nahuel-react-ff-api/section-2/${item.id}`} key={item.id} className="character-card">
                 <figure className="avatar">
                   {item.pictures.length?
                     <img src={item.pictures[0].url} alt={item.name}/> :
@@ -74,6 +74,9 @@ function Section1 () {
                 </figure>
                 <div className="name">
                   {item.name}
+                </div>
+                <div className="saga">
+                  {item.origin}
                 </div>
               </Link>
             )

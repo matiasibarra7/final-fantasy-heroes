@@ -17,17 +17,37 @@
   display: flex;
   flex-direction: column;
   margin: 0 auto;
+  height: 170px;
+  margin-bottom: 0.4rem;
+  justify-content: space-evenly;
+
+  text-decoration: none;
+  text-align: center;
+  color: black;
+
+  transition: all 0.5s;
 }
 
 .character-card:hover {
   box-shadow: 0px 0px 10px rgb(100, 100, 100);
+  background-color: rgba(173, 230, 199, 0.8);
+  height: 240px;
 }
 
 .name {
-  text-align: center;
+  font-weight: bold;
 }
 
-.searcher-heroes {
+.saga {
+  visibility: hidden;
+}
+
+.character-card:hover .saga {
+  visibility: visible;
+}
+
+
+.hero-seeker {
   width: 33%;
   max-width: 240px;
 }

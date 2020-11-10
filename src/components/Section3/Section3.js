@@ -5,12 +5,18 @@ function Section3 () {
   const [count, setCount] = useState(0);
 
   return (
-    <div>
+    <>
+    <div style={{textAlign: "center"}}>Under construction...</div>
+    <figure style={{maxWidth:"360px", margin:"0 auto"}}>
+      <img src="img/UC-Sign.png" alt="Under construction..." style={{width:"100%"}}/>
+    </figure>
+    <div style={{display: "none"}}>
       <p>You clicked {count} times</p>
       <button onClick={() => setCount(count + 1)}>
         Click me
       </button>
     </div>
+    </>
   );
 }
   

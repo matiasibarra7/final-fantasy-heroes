@@ -10,18 +10,18 @@ function App() {
   return (
     <div className="App">
       <header>
-        <h1 style={{textAlign: "center"}}>Welcome to Nahuel's Page</h1>
+        <h1 style={{textAlign: "center"}}>Final Fantasy Heroes</h1>
         <Navbar />
       </header>
 
-      <div className="container-zone">
+      <main className="container-zone">
         <Switch >
-          <Route path="/section-2/:id" component= { Section2 }></Route>
-          <Route path="/section-2" component= { Section2 }></Route>
-          <Route path="/section-3" component= { Section3 }></Route>
-          <Route path="/" component= { Section1 }></Route>
+          <Route path="/nahuel-react-ff-api/section-2/:id" component= { Section2 }></Route>
+          <Route path="/nahuel-react-ff-api/section-2" component= { Section2 }></Route>
+          <Route path="/nahuel-react-ff-api/section-3" component= { Section3 }></Route>
+          <Route path="/nahuel-react-ff-api" component= { Section1 }></Route>
         </Switch >
-      </div>
+      </main>
 
 
     </div>
