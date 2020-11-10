@@ -11,6 +11,10 @@ function App() {
     <div className="App">
       <header>
         <h1 style={{textAlign: "center"}}>Final Fantasy Heroes</h1>
+        <div className="myGit">
+          <div><a href="https://github.com/matiasibarra7" target="_black">Github</a></div>
+          <div><a href="https://linkedin.com/in/ibarra-nahuel-matias" target="_black">LinkedIn</a></div>
+        </div>
         <Navbar />
       </header>
 

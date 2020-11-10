@@ -9,8 +9,6 @@ function Section1 () {
   const [allItems, setAllItems] = useState([]);
   
 
-
-
   // esta función de efecto actua como componentDidMount
   useEffect(() => {
     fetch("https://www.moogleapi.com/api/v1/characters")
@@ -51,6 +49,36 @@ function Section1 () {
     }
   };
 
+  function gameFilter() {
+    const inputs = Array.from(document.getElementById("sagaFilter").children)
+    const selected = inputs.filter(input => {
+      return input.checked
+    })
+    const gamesFiltered = selected.map(el => {
+      return el.getAttribute("data-game-name")
+    })
+    //console.log("gamesFiltered")
+    //console.log(gamesFiltered)
+
+    //corrección del ff4
+    if (gamesFiltered.includes('Final Fantasy IV')) {
+      gamesFiltered.push('Final Fantasy 04')
+    }
+    
+    let itemsFiltered = allItems.filter(el => { 
+      return gamesFiltered.includes(el.origin)
+    })
+    //console.log("itemsFiltered");
+    //console.log(itemsFiltered);
+    if (itemsFiltered.length) {
+      setItems(itemsFiltered);
+
+    } else {
+      setItems(allItems)
+    }
+  };
+
+
   if (error) {
     return <div>Error: {error.message}</div>;
   } else if (!isLoaded) {
@@ -58,6 +86,27 @@ function Section1 () {
   } else {
     return (
       <>
+        <div style={{fontWeight:"bold", paddingLeft:"1rem"}}>*Need to fix filter and search combined</div>
+        <div style={{width: '100%', padding: '1rem'}}>
+          <h3>Filter</h3>
+          <div onChange={gameFilter} id="sagaFilter" style={{display: "flex", justifyContent:"space-between", flexWrap:"wrap"}}>
+            <input type="checkbox" name="game-filter" id="" data-game-name="Final Fantasy"/> FF I
+            <input type="checkbox" name="game-filter" id="" data-game-name="Final Fantasy II"/> FF II
+            <input type="checkbox" name="game-filter" id="" data-game-name="Final Fantasy III"/> FF III
+            <input type="checkbox" name="game-filter" id="" data-game-name="Final Fantasy IV"/> FF IV
+            <input type="checkbox" name="game-filter" id="" data-game-name="Final Fantasy 05"/> FF V
+            <input type="checkbox" name="game-filter" id="" data-game-name="Final Fantasy 06"/> FF VI
+            <input type="checkbox" name="game-filter" id="" data-game-name="Final Fantasy 07"/> FF VII
+            <input type="checkbox" name="game-filter" id="" data-game-name="Final Fantasy 08"/> FF VIII
+            <input type="checkbox" name="game-filter" id="" data-game-name="Final Fantasy 09"/> FF XI
+            <input type="checkbox" name="game-filter" id="" data-game-name="Final Fantasy 10"/> FF X
+            <input type="checkbox" name="game-filter" id="" data-game-name="Final Fantasy 10-2"/> FF X-2
+            <input type="checkbox" name="game-filter" id="" data-game-name="Final Fantasy 12"/> FF XII
+            <input type="checkbox" name="game-filter" id="" data-game-name="Final Fantasy 13"/> FF XIII
+            <input type="checkbox" name="game-filter" id="" data-game-name="Final Fantasy 13-2"/> FF XIII-2
+            <input type="checkbox" name="game-filter" id="" data-game-name="Final Fantasy 15"/> FF XV
+          </div>
+        </div>
         <div style={{width: '100%', padding: '1rem'}}>
           <h3>Search</h3>
           <input className="hero-seeker" id="heroSeeker" onKeyUp={searchHero} placeholder="Type to search a Hero"/>
