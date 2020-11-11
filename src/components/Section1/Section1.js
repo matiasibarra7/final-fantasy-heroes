@@ -18,6 +18,9 @@ function Section1 () {
           if (!isLoaded) {
             setAllItems(characters)
           }
+
+          document.querySelector(".container-zone").classList.remove('section-two')
+
           setIsLoaded(true);
           setItems(characters);
         },
@@ -73,8 +76,6 @@ function Section1 () {
       return el.getAttribute("data-game-name")
     })
 
-    
-
     // Si hay algún checkbox marcado, dibujo los filtros
     if (gamesFiltered.length) {
 
@@ -109,7 +110,7 @@ function Section1 () {
         <div className="filter-section">
           <div className="section-title" onClick={toogleFilter}>
             <i className="fas fa-caret-right"></i>
-            <i className="fas fa-caret-down"></i> Filter
+            <i className="fas fa-caret-down"></i> Filter <span>(Click to see the games)</span>
           </div>
           <div className="game-filter-container" onChange={gameFilter} id="sagaFilter">
             <span><input type="checkbox" name="game-filter" id="" data-game-name="Final Fantasy"/> FF I</span>
@@ -120,13 +121,14 @@ function Section1 () {
             <span><input type="checkbox" name="game-filter" id="" data-game-name="Final Fantasy 06"/> FF VI</span>
             <span><input type="checkbox" name="game-filter" id="" data-game-name="Final Fantasy 07"/> FF VII</span>
             <span><input type="checkbox" name="game-filter" id="" data-game-name="Final Fantasy 08"/> FF VIII</span>
-            <span><input type="checkbox" name="game-filter" id="" data-game-name="Final Fantasy 09"/> FF XI</span>
+            <span><input type="checkbox" name="game-filter" id="" data-game-name="Final Fantasy 09"/> FF IX</span>
             <span><input type="checkbox" name="game-filter" id="" data-game-name="Final Fantasy 10"/> FF X</span>
             <span><input type="checkbox" name="game-filter" id="" data-game-name="Final Fantasy 10-2"/> FF X-2</span>
             <span><input type="checkbox" name="game-filter" id="" data-game-name="Final Fantasy 12"/> FF XII</span>
             <span><input type="checkbox" name="game-filter" id="" data-game-name="Final Fantasy 13"/> FF XIII</span>
             <span><input type="checkbox" name="game-filter" id="" data-game-name="Final Fantasy 13-2"/> FF XIII-2</span>
             <span><input type="checkbox" name="game-filter" id="" data-game-name="Final Fantasy 15"/> FF XV</span>
+            <span><input type="checkbox" name="game-filter" id="" data-game-name="Final Fantasy BE"/> FF BE</span>
           </div>
         </div>
 
@@ -140,10 +142,7 @@ function Section1 () {
             return (
               <Link to={`/nahuel-react-ff-api/section-2/${item.id}`} key={item.id} className="character-card">
                 <figure className="avatar">
-                  {item.pictures.length?
-                    <img src={item.pictures[0].url} alt={item.name}/> :
-                    <div>Non Picture</div>
-                  }
+                  <img src={item.pictures.length? item.pictures[0].url : "nahuel-react-ff-api/img/no-picture.png"} alt={item.name}/>
                 </figure>
                 <div className="name">
                   {item.name}

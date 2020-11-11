@@ -29,6 +29,7 @@ code {
   background-color: lightblue;
   margin: 0 auto;
   padding: 1rem 0;
+  transition: all 0.5s;
 }
 
 /* Estilos del loader */
