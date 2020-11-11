@@ -31,6 +31,16 @@ function Section1 () {
       )
   }, []);
 
+  function toogleFilter() {
+    const divFilter = document.querySelector('.filter-section')
+    divFilter.classList.toggle("active")
+  }
+
+  function toogleSearch() {
+    const divSearch = document.querySelector('.seeker-section')
+    divSearch.classList.toggle("active")
+  }
+
   function searchHero() {
     const seeker = document.getElementById('heroSeeker');
     const word = seeker.value.toLowerCase(); // Convierto a lowerCase para poder hacer una busqueda case insensitive
@@ -50,30 +60,38 @@ function Section1 () {
   };
 
   function gameFilter() {
-    const inputs = Array.from(document.getElementById("sagaFilter").children)
+    // capturo los checkboxes
+    const inputs = Array.from(document.getElementsByName("game-filter"))
+
+    // filtro aquellos chequeados
     const selected = inputs.filter(input => {
       return input.checked
     })
+
+    // obtengo un arreglo con los juegos chequeados
     const gamesFiltered = selected.map(el => {
       return el.getAttribute("data-game-name")
     })
-    //console.log("gamesFiltered")
-    //console.log(gamesFiltered)
 
-    //corrección del ff4
-    if (gamesFiltered.includes('Final Fantasy IV')) {
-      gamesFiltered.push('Final Fantasy 04')
-    }
     
-    let itemsFiltered = allItems.filter(el => { 
-      return gamesFiltered.includes(el.origin)
-    })
-    //console.log("itemsFiltered");
-    //console.log(itemsFiltered);
-    if (itemsFiltered.length) {
+
+    // Si hay algún checkbox marcado, dibujo los filtros
+    if (gamesFiltered.length) {
+
+      // corrección del ff4
+      if (gamesFiltered.includes('Final Fantasy IV')) {
+        gamesFiltered.push('Final Fantasy 04')
+      }
+      
+      // Tomo todos los heroes y filtro los que pertenezcan a los juegos chequeados
+      const itemsFiltered = allItems.filter(el => { 
+        return gamesFiltered.includes(el.origin)
+      })
+
       setItems(itemsFiltered);
 
     } else {
+      // Si no hay checkbox marcados, dibujo todos
       setItems(allItems)
     }
   };
@@ -87,30 +105,36 @@ function Section1 () {
     return (
       <>
         <div style={{fontWeight:"bold", paddingLeft:"1rem"}}>*Need to fix filter and search combined</div>
-        <div style={{width: '100%', padding: '1rem'}}>
-          <h3>Filter</h3>
-          <div onChange={gameFilter} id="sagaFilter" style={{display: "flex", justifyContent:"space-between", flexWrap:"wrap"}}>
-            <input type="checkbox" name="game-filter" id="" data-game-name="Final Fantasy"/> FF I
-            <input type="checkbox" name="game-filter" id="" data-game-name="Final Fantasy II"/> FF II
-            <input type="checkbox" name="game-filter" id="" data-game-name="Final Fantasy III"/> FF III
-            <input type="checkbox" name="game-filter" id="" data-game-name="Final Fantasy IV"/> FF IV
-            <input type="checkbox" name="game-filter" id="" data-game-name="Final Fantasy 05"/> FF V
-            <input type="checkbox" name="game-filter" id="" data-game-name="Final Fantasy 06"/> FF VI
-            <input type="checkbox" name="game-filter" id="" data-game-name="Final Fantasy 07"/> FF VII
-            <input type="checkbox" name="game-filter" id="" data-game-name="Final Fantasy 08"/> FF VIII
-            <input type="checkbox" name="game-filter" id="" data-game-name="Final Fantasy 09"/> FF XI
-            <input type="checkbox" name="game-filter" id="" data-game-name="Final Fantasy 10"/> FF X
-            <input type="checkbox" name="game-filter" id="" data-game-name="Final Fantasy 10-2"/> FF X-2
-            <input type="checkbox" name="game-filter" id="" data-game-name="Final Fantasy 12"/> FF XII
-            <input type="checkbox" name="game-filter" id="" data-game-name="Final Fantasy 13"/> FF XIII
-            <input type="checkbox" name="game-filter" id="" data-game-name="Final Fantasy 13-2"/> FF XIII-2
-            <input type="checkbox" name="game-filter" id="" data-game-name="Final Fantasy 15"/> FF XV
+
+        <div className="filter-section">
+          <div className="section-title" onClick={toogleFilter}>
+            <i className="fas fa-caret-right"></i>
+            <i className="fas fa-caret-down"></i> Filter
+          </div>
+          <div className="game-filter-container" onChange={gameFilter} id="sagaFilter">
+            <span><input type="checkbox" name="game-filter" id="" data-game-name="Final Fantasy"/> FF I</span>
+            <span><input type="checkbox" name="game-filter" id="" data-game-name="Final Fantasy II"/> FF II</span>
+            <span><input type="checkbox" name="game-filter" id="" data-game-name="Final Fantasy III"/> FF III</span>
+            <span><input type="checkbox" name="game-filter" id="" data-game-name="Final Fantasy IV"/> FF IV</span>
+            <span><input type="checkbox" name="game-filter" id="" data-game-name="Final Fantasy 05"/> FF V</span>
+            <span><input type="checkbox" name="game-filter" id="" data-game-name="Final Fantasy 06"/> FF VI</span>
+            <span><input type="checkbox" name="game-filter" id="" data-game-name="Final Fantasy 07"/> FF VII</span>
+            <span><input type="checkbox" name="game-filter" id="" data-game-name="Final Fantasy 08"/> FF VIII</span>
+            <span><input type="checkbox" name="game-filter" id="" data-game-name="Final Fantasy 09"/> FF XI</span>
+            <span><input type="checkbox" name="game-filter" id="" data-game-name="Final Fantasy 10"/> FF X</span>
+            <span><input type="checkbox" name="game-filter" id="" data-game-name="Final Fantasy 10-2"/> FF X-2</span>
+            <span><input type="checkbox" name="game-filter" id="" data-game-name="Final Fantasy 12"/> FF XII</span>
+            <span><input type="checkbox" name="game-filter" id="" data-game-name="Final Fantasy 13"/> FF XIII</span>
+            <span><input type="checkbox" name="game-filter" id="" data-game-name="Final Fantasy 13-2"/> FF XIII-2</span>
+            <span><input type="checkbox" name="game-filter" id="" data-game-name="Final Fantasy 15"/> FF XV</span>
           </div>
         </div>
-        <div style={{width: '100%', padding: '1rem'}}>
-          <h3>Search</h3>
+
+        <div className="seeker-section">
+          <div className="section-title" onClick={toogleSearch}><i className="fas fa-search"></i> Search <span>(Click to active the search mode)</span></div>
           <input className="hero-seeker" id="heroSeeker" onKeyUp={searchHero} placeholder="Type to search a Hero"/>
         </div>
+
         <div className="characters-container">
           {itemsToShow.map(item => {
             return (

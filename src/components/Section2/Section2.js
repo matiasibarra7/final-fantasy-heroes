@@ -9,12 +9,12 @@ function Section2 (props) {
 
   // esta función de efecto actua como componentDidMount
   useEffect(() => {
-    fetch(`https://www.moogleapi.com/api/v1/characters/${props.match.params.id? props.match.params.id : '7e413cac-ab41-4eea-0f6c-08d6afcab3e2'}`)
+    fetch(`https://www.moogleapi.com/api/v1/characters/${props.match.params.id? props.match.params.id : 'random'}`)
       .then(res => res.json())
       .then(
         (character) => {
           setIsLoaded(true);
-          setItem(character);
+          setItem(props.match.params.id? character : [character]);
         },
         // Nota: es importante manejar errores aquí y no en 
         // un bloque catch() para que no interceptemos errores
@@ -35,6 +35,9 @@ function Section2 (props) {
       <>
         <div className="character-container">
           <h2>Character's Details</h2>
+          
+            {props.match.params.id? '' : <div style={{fontWeight:"bold"}}>Random character. If you are looking for one in particular, select it from the character list :) </div>}
+
             {item.length?
               <>
                 <figure className="portrait">
