@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/nahuel-react-ff-api/static/css/main.0d287b8e.chunk.css",
-    "main.js": "/nahuel-react-ff-api/static/js/main.39dba869.chunk.js",
-    "main.js.map": "/nahuel-react-ff-api/static/js/main.39dba869.chunk.js.map",
+    "main.js": "/nahuel-react-ff-api/static/js/main.2d560b68.chunk.js",
+    "main.js.map": "/nahuel-react-ff-api/static/js/main.2d560b68.chunk.js.map",
     "runtime-main.js": "/nahuel-react-ff-api/static/js/runtime-main.8dbd5123.js",
     "runtime-main.js.map": "/nahuel-react-ff-api/static/js/runtime-main.8dbd5123.js.map",
     "static/js/2.32b67d5b.chunk.js": "/nahuel-react-ff-api/static/js/2.32b67d5b.chunk.js",
@@ -15,6 +15,6 @@
     "static/js/runtime-main.8dbd5123.js",
     "static/js/2.32b67d5b.chunk.js",
     "static/css/main.0d287b8e.chunk.css",
-    "static/js/main.39dba869.chunk.js"
+    "static/js/main.2d560b68.chunk.js"
   ]
 }
