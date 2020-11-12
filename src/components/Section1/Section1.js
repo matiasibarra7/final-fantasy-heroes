@@ -108,10 +108,12 @@ function Section1 () {
         <div style={{fontWeight:"bold", paddingLeft:"1rem"}}>*Need to fix filter and search combined</div>
 
         <div className="filter-section">
-          <div className="section-title" onClick={toogleFilter}>
-            <i className="fas fa-caret-right"></i>
-            <i className="fas fa-caret-down"></i> Filter <span>(Click to see the games)</span>
-          </div>
+          <button className="feature-btn" onClick={toogleFilter}>
+            <div className="section-title" >
+                <i className="fas fa-caret-right"></i>
+                <i className="fas fa-caret-down"></i> Filter
+            </div>
+          </button>
           <div className="game-filter-container" onChange={gameFilter} id="sagaFilter">
             <span><input type="checkbox" name="game-filter" id="" data-game-name="Final Fantasy"/> FF I</span>
             <span><input type="checkbox" name="game-filter" id="" data-game-name="Final Fantasy II"/> FF II</span>
@@ -133,7 +135,11 @@ function Section1 () {
         </div>
 
         <div className="seeker-section">
-          <div className="section-title" onClick={toogleSearch}><i className="fas fa-search"></i> Search <span>(Click to active the search mode)</span></div>
+          <button className="feature-btn" onClick={toogleSearch}>
+            <div className="section-title" >
+              <i className="fas fa-search"></i> Search
+            </div>
+          </button>
           <input className="hero-seeker" id="heroSeeker" onKeyUp={searchHero} placeholder="Type to search a Hero"/>
         </div>
 

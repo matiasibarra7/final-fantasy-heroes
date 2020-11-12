@@ -1,15 +1,25 @@
 .primary-navbar {
-  display: flex;
+  display: grid;
+  grid-template-columns: 33.33% 33.33% 33.33%;
   width: 100%;
   max-width: 1280px;
   margin: 1rem auto;
-  padding: 1rem 0;
-  background-color: grey;
+  padding: 0;
+  background-color: #7768AE;
 }
 
 .primary-navbar .element {
-  margin: 0 auto;
+  width: 100%;
+  padding: 1rem 0;
   color: wheat;
   font-weight: bold;
+  text-align: center;
+
+  transition: all 0.5s;
 }
 
+.primary-navbar .element:hover {
+  background-color: #E15554;
+  font-size: 1.1rem;
+  padding: 0.95rem 0;
+}
