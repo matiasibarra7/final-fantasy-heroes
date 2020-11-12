@@ -7,22 +7,20 @@ function Banner() {
 
   // esta función de efecto actua como componentDidMount
   useEffect(() => {
-    console.log("in")
-
+    //console.log("in")
     setTimeout(rotateImg, 5000) // bug al cambiar de vuelta a esta sección antes de cumplirse los 5s
-    
   }, []);
 
 
   function rotateImg() {
     // console.log("actualImg ", actualImg)
-    console.log("cont: ", cont)
+    //console.log("cont: ", cont)
 
     const list = document.querySelectorAll(".banner-element")
     list.forEach(el => {
       el.classList.remove("active")
     })
-    console.log("list.length: ", list.length);
+    //console.log("list.length: ", list.length);
 
     
     cont++
@@ -60,9 +58,9 @@ function Banner() {
   return (
     <div>
       <figure className="figure-banner">
-        <img src="nahuel-react-ff-api/img/banner/ff-12.jpg" alt="ff-12" className="banner-element fade active"/>
-        <img src="nahuel-react-ff-api/img/banner/dissidia-villains.jpg" alt="villains" className="banner-element fade"/>
-        <img src="nahuel-react-ff-api/img/banner/tactics.jpg" alt="ff-tactics" className="banner-element fade"/>
+        <img src="/nahuel-react-ff-api/img/banner/ff-12.jpg" alt="ff-12" className="banner-element fade active"/>
+        <img src="/nahuel-react-ff-api/img/banner/dissidia-villains.jpg" alt="villains" className="banner-element fade"/>
+        <img src="/nahuel-react-ff-api/img/banner/tactics.jpg" alt="ff-tactics" className="banner-element fade"/>
       </figure>
     </div>
   );
