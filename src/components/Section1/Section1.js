@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import './section1.css'
+import Banner from "../Banner/Banner"
 
 function Section1 () {
   const [error, setError] = useState(null);
@@ -105,6 +106,7 @@ function Section1 () {
   } else {
     return (
       <>
+        < Banner />
         <div style={{fontWeight:"bold", paddingLeft:"1rem"}}>*Need to fix filter and search combined</div>
 
         <div className="filter-section">

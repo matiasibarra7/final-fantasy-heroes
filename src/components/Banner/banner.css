@@ -1,0 +1,32 @@
+.figure-banner {
+  margin: 0px 0px 1rem;
+  max-height: 37rem;
+  overflow: hidden;
+}
+
+.figure-banner img {
+  width: 100%;
+  display: none;
+  
+}
+
+.figure-banner img.active {
+  display: block;
+}
+
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}

@@ -6,6 +6,7 @@
   margin: 1rem auto;
   padding: 0;
   background-color: #7768AE;
+  border-radius: 5px;
 }
 
 .primary-navbar .element {
@@ -20,6 +21,8 @@
 
 .primary-navbar .element:hover {
   background-color: #E15554;
-  font-size: 1.1rem;
-  padding: 0.95rem 0;
+}
+
+.primary-navbar .element.active {
+  background-color: #E15554;
 }
