@@ -7,6 +7,7 @@
   padding: 0;
   background-color: #7768AE;
   border-radius: 5px;
+  /* position: absolute; */
 }
 
 .primary-navbar .element {
@@ -22,6 +23,7 @@
 
 .primary-navbar .element:hover {
   background-color: #E15554;
+  /* font-size: 1.1rem; */
 }
 
 .primary-navbar .element.active {

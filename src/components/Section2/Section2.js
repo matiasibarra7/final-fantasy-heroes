@@ -106,10 +106,9 @@ function Section2 (props) {
               <figure style={{ width: "100", maxWidth: "480px", margin: "2rem auto", backgroundColor:"white"}}>
                   {
                     gameFound[0].title === "Final Fantasy Brave Exvius"? 
-                      <img src="../img/FF-BE.png" alt="Final fantasy BE"/>
+                      <img src="/final-fantasy-heroes/img/FF-BE.png" alt="Final fantasy BE"/>
                       :
                       <img src={gameFound[0].picture? gameFound[0].picture : "../img/no-picture.png"} alt={gameFound[0].picture? gameFound[0].title : "not-found"} style={{width: "100%"}}/>
-
                   }
               </figure>
               <div><span className="attr-title">Title:</span> {gameFound[0].title}</div>
