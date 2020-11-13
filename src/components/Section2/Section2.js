@@ -75,7 +75,7 @@ function Section2 (props) {
   if (error) {
     return <div>Error: {error.message}</div>;
   } else if (!isLoaded) {
-    return <div className="loader"></div>;
+    return <div className="loader-container"><div className="loader"></div></div>;
   } else {
     return (
       <>
