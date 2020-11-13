@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/final-fantasy-heroes/static/css/main.b9b1fb71.chunk.css",
-    "main.js": "/final-fantasy-heroes/static/js/main.40780126.chunk.js",
-    "main.js.map": "/final-fantasy-heroes/static/js/main.40780126.chunk.js.map",
+    "main.css": "/final-fantasy-heroes/static/css/main.852e545a.chunk.css",
+    "main.js": "/final-fantasy-heroes/static/js/main.dbb0b73d.chunk.js",
+    "main.js.map": "/final-fantasy-heroes/static/js/main.dbb0b73d.chunk.js.map",
     "runtime-main.js": "/final-fantasy-heroes/static/js/runtime-main.dc252f0f.js",
     "runtime-main.js.map": "/final-fantasy-heroes/static/js/runtime-main.dc252f0f.js.map",
     "static/js/2.32b67d5b.chunk.js": "/final-fantasy-heroes/static/js/2.32b67d5b.chunk.js",
     "static/js/2.32b67d5b.chunk.js.map": "/final-fantasy-heroes/static/js/2.32b67d5b.chunk.js.map",
     "index.html": "/final-fantasy-heroes/index.html",
-    "static/css/main.b9b1fb71.chunk.css.map": "/final-fantasy-heroes/static/css/main.b9b1fb71.chunk.css.map",
+    "static/css/main.852e545a.chunk.css.map": "/final-fantasy-heroes/static/css/main.852e545a.chunk.css.map",
     "static/js/2.32b67d5b.chunk.js.LICENSE.txt": "/final-fantasy-heroes/static/js/2.32b67d5b.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.dc252f0f.js",
     "static/js/2.32b67d5b.chunk.js",
-    "static/css/main.b9b1fb71.chunk.css",
-    "static/js/main.40780126.chunk.js"
+    "static/css/main.852e545a.chunk.css",
+    "static/js/main.dbb0b73d.chunk.js"
   ]
 }
