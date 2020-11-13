@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/nahuel-react-ff-api/static/css/main.b9b1fb71.chunk.css",
-    "main.js": "/nahuel-react-ff-api/static/js/main.97c96111.chunk.js",
-    "main.js.map": "/nahuel-react-ff-api/static/js/main.97c96111.chunk.js.map",
-    "runtime-main.js": "/nahuel-react-ff-api/static/js/runtime-main.8dbd5123.js",
-    "runtime-main.js.map": "/nahuel-react-ff-api/static/js/runtime-main.8dbd5123.js.map",
-    "static/js/2.32b67d5b.chunk.js": "/nahuel-react-ff-api/static/js/2.32b67d5b.chunk.js",
-    "static/js/2.32b67d5b.chunk.js.map": "/nahuel-react-ff-api/static/js/2.32b67d5b.chunk.js.map",
-    "index.html": "/nahuel-react-ff-api/index.html",
-    "static/css/main.b9b1fb71.chunk.css.map": "/nahuel-react-ff-api/static/css/main.b9b1fb71.chunk.css.map",
-    "static/js/2.32b67d5b.chunk.js.LICENSE.txt": "/nahuel-react-ff-api/static/js/2.32b67d5b.chunk.js.LICENSE.txt"
+    "main.css": "/final-fantasy-heroes/static/css/main.b9b1fb71.chunk.css",
+    "main.js": "/final-fantasy-heroes/static/js/main.40780126.chunk.js",
+    "main.js.map": "/final-fantasy-heroes/static/js/main.40780126.chunk.js.map",
+    "runtime-main.js": "/final-fantasy-heroes/static/js/runtime-main.dc252f0f.js",
+    "runtime-main.js.map": "/final-fantasy-heroes/static/js/runtime-main.dc252f0f.js.map",
+    "static/js/2.32b67d5b.chunk.js": "/final-fantasy-heroes/static/js/2.32b67d5b.chunk.js",
+    "static/js/2.32b67d5b.chunk.js.map": "/final-fantasy-heroes/static/js/2.32b67d5b.chunk.js.map",
+    "index.html": "/final-fantasy-heroes/index.html",
+    "static/css/main.b9b1fb71.chunk.css.map": "/final-fantasy-heroes/static/css/main.b9b1fb71.chunk.css.map",
+    "static/js/2.32b67d5b.chunk.js.LICENSE.txt": "/final-fantasy-heroes/static/js/2.32b67d5b.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.8dbd5123.js",
+    "static/js/runtime-main.dc252f0f.js",
     "static/js/2.32b67d5b.chunk.js",
     "static/css/main.b9b1fb71.chunk.css",
-    "static/js/main.97c96111.chunk.js"
+    "static/js/main.40780126.chunk.js"
   ]
 }
