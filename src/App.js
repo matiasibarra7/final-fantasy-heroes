@@ -20,10 +20,10 @@ function App() {
 
       <main className="container-zone">
         <Switch >
-          <Route path="/nahuel-react-ff-api/section-2/:id" component= { Section2 }></Route>
-          <Route path="/nahuel-react-ff-api/section-2" component= { Section2 }></Route>
-          <Route path="/nahuel-react-ff-api/section-3" component= { Section3 }></Route>
-          <Route path="/nahuel-react-ff-api" component= { Section1 }></Route>
+          <Route path="/final-fantasy-heroes/section-2/:id" component= { Section2 }></Route>
+          <Route path="/final-fantasy-heroes/section-2" component= { Section2 }></Route>
+          <Route path="/final-fantasy-heroes/section-3" component= { Section3 }></Route>
+          <Route path="/final-fantasy-heroes" component= { Section1 }></Route>
         </Switch >
       </main>
 

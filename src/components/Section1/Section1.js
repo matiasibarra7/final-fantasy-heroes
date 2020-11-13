@@ -148,9 +148,9 @@ function Section1 () {
         <div className="characters-container">
           {itemsToShow.map(item => {
             return (
-              <Link to={`/nahuel-react-ff-api/section-2/${item.id}`} key={item.id} className="character-card">
+              <Link to={`/final-fantasy-heroes/section-2/${item.id}`} key={item.id} className="character-card">
                 <figure className="avatar">
-                  <img src={item.pictures.length? item.pictures[0].url : "/nahuel-react-ff-api/img/no-picture.png"} alt={item.name}/>
+                  <img src={item.pictures.length? item.pictures[0].url : "/final-fantasy-heroes/img/no-picture.png"} alt={item.name}/>
                 </figure>
                 <div className="name">
                   {item.name}
