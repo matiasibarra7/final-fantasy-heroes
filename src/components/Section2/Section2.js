@@ -85,26 +85,25 @@ function Section2 (props) {
             {props.match.params.id? '' : <div style={{fontWeight:"bold"}}>Random character. If you are looking for one in particular, select it from the character list :) </div>}
 
             {item.length?
-              <>
+              <div className="specific-details">
                 <figure className="portrait">
                   <img src={item[0].pictures.length? item[0].pictures[0].url : "../img/no-picture.png"} alt={item[0].pictures.length? item[0].name : "not-found"}/>
                 </figure>
                 <div className="character-details">
-                  <div><span className="attr-title">Name:</span> {item[0].name}</div>
-                  <div><span className="attr-title">Description:</span> {item[0].description? item[0].description : 'None'}</div>
-                  <div><span className="attr-title">Gender:</span> {item[0].gender}</div>
-                  <div><span className="attr-title">Job:</span> {item[0].job}</div>
-                  <div><span className="attr-title">Origin:</span> {item[0].origin}</div>
+                  <div className="details-field"><span className="attr-title">Name:</span> {item[0].name}</div>
+                  <div className="details-field"><span className="attr-title">Description:</span> {item[0].description? item[0].description : 'None'}</div>
+                  <div className="details-field"><span className="attr-title">Gender:</span> {item[0].gender}</div>
+                  <div className="details-field"><span className="attr-title">Job:</span> {item[0].job}</div>
+                  <div className="details-field"><span className="attr-title">Origin:</span> {item[0].origin}</div>
                 </div>
-              </>
+              </div>
             : <div>Cargando...</div>
             }
         </div>
         <div className="game-container">
           {gameFound.length? 
             <>
-              <h3>{gameFound[0].title}</h3>
-              <figure style={{ width: "100", maxWidth: "480px"}}>
+              <figure style={{ width: "100", maxWidth: "480px", margin: "2rem auto", backgroundColor:"white"}}>
                   {
                     gameFound[0].title === "Final Fantasy Brave Exvius"? 
                       <img src="../img/FF-BE.png" alt="Final fantasy BE"/>
@@ -113,6 +112,7 @@ function Section2 (props) {
 
                   }
               </figure>
+              <div><span className="attr-title">Title:</span> {gameFound[0].title}</div>
               <div><span className="attr-title">Platform:</span> {gameFound[0].platform}</div>
               <div><span className="attr-title">Description:</span> {gameFound[0].description}</div>
             </>

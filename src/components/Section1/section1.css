@@ -68,6 +68,10 @@
   cursor: pointer;
 }
 
+.feature-btn:hover {
+  background-color: #E77474;
+}
+
 .section-title {
   display: inline-block;
   font-size: 1.2rem;

@@ -1,9 +1,14 @@
 .container-zone.section-two {
-  /* display: flex;
-  flex-wrap: wrap; */
   padding: 0;
-  max-width: 720px;
+  max-width: 1024px;
   border-radius: 5px;
+}
+
+.character-container {
+  display: flex;
+  flex-direction: column;
+  padding: 0 1rem 1rem;
+  background-color: rgba(173, 230, 199, 0.8);
 }
 
 .portrait {
@@ -15,12 +20,8 @@
   width: 100%;
 }
 
-
-.character-container {
-  display: flex;
-  flex-direction: column;
-  padding: 0 1rem 1rem;
-  background-color: rgba(173, 230, 199, 0.8);
+.details-field {
+  margin: 0.5rem 0;
 }
 
 .game-container {
@@ -31,4 +32,27 @@
 
 .attr-title {
   font-weight: bold;
+}
+
+@media(min-width:540px) {
+  .specific-details {
+    display: flex;
+    width: 100%;
+  }
+
+  .portrait {
+    margin: auto;
+    width: 35%;
+  }
+
+  .character-details {
+    margin: 1rem 0;
+    padding-left: 1rem;
+    width: 65%;
+  }
+
+  .character-container {
+    display: flex;
+    flex-direction: column;
+  }
 }
