@@ -24,10 +24,9 @@ function App() {
           <Route path="/final-fantasy-heroes/section-2" component= { Section2 }></Route>
           <Route path="/final-fantasy-heroes/section-3" component= { Section3 }></Route>
           <Route path="/final-fantasy-heroes" component= { Section1 }></Route>
+          <Route path="/" component= { Section1 }></Route>
         </Switch >
       </main>
-
-
     </div>
   );
 }

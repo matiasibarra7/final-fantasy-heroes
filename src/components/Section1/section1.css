@@ -27,6 +27,7 @@
   color: black;
 
   transition: all 0.5s;
+
 }
 
 .character-card:hover {
@@ -54,11 +55,12 @@
 }
 
 .character-card.test .avatar {
-  width: 65px;
+  width: 70px;
 }
 
 .character-card.test .saga {
   visibility: visible;
+  opacity: 1;
 }
 
 /*END TEST*/
@@ -80,10 +82,13 @@
 
 .saga {
   visibility: hidden;
+  opacity: 0;
+  transition: all 0.5s;
 }
 
 .character-card:hover .saga {
   visibility: visible;
+  opacity: 1;
 }
 
 .feature-btn {

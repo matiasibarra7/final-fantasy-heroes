@@ -77,6 +77,8 @@ function Section1 () {
       return el.getAttribute("data-game-name")
     })
 
+    console.log(gamesFiltered);
+
     // Si hay algún checkbox marcado, dibujo los filtros
     if (gamesFiltered.length) {
 
@@ -96,6 +98,7 @@ function Section1 () {
       // Si no hay checkbox marcados, dibujo todos
       setItems(allItems)
     }
+    console.log(allItems);
   };
 
 
@@ -121,24 +124,24 @@ function Section1 () {
             <span><input type="checkbox" name="game-filter" id="" data-game-name="Final Fantasy II"/> FF II</span>
             <span><input type="checkbox" name="game-filter" id="" data-game-name="Final Fantasy III"/> FF III</span>
             <span><input type="checkbox" name="game-filter" id="" data-game-name="Final Fantasy IV"/> FF IV</span>
-            <span><input type="checkbox" name="game-filter" id="" data-game-name="Final Fantasy 05"/> FF V</span>
-            <span><input type="checkbox" name="game-filter" id="" data-game-name="Final Fantasy 06"/> FF VI</span>
-            <span><input type="checkbox" name="game-filter" id="" data-game-name="Final Fantasy 07"/> FF VII</span>
-            <span><input type="checkbox" name="game-filter" id="" data-game-name="Final Fantasy 08"/> FF VIII</span>
-            <span><input type="checkbox" name="game-filter" id="" data-game-name="Final Fantasy 09"/> FF IX</span>
-            <span><input type="checkbox" name="game-filter" id="" data-game-name="Final Fantasy 10"/> FF X</span>
-            <span><input type="checkbox" name="game-filter" id="" data-game-name="Final Fantasy 10-2"/> FF X-2</span>
-            <span><input type="checkbox" name="game-filter" id="" data-game-name="Final Fantasy 12"/> FF XII</span>
-            <span><input type="checkbox" name="game-filter" id="" data-game-name="Final Fantasy 13"/> FF XIII</span>
-            <span><input type="checkbox" name="game-filter" id="" data-game-name="Final Fantasy 13-2"/> FF XIII-2</span>
-            <span><input type="checkbox" name="game-filter" id="" data-game-name="Final Fantasy 15"/> FF XV</span>
+            <span><input type="checkbox" name="game-filter" id="" data-game-name="Final Fantasy V"/> FF V</span>
+            <span><input type="checkbox" name="game-filter" id="" data-game-name="Final Fantasy VI"/> FF VI</span>
+            <span><input type="checkbox" name="game-filter" id="" data-game-name="Final Fantasy VII"/> FF VII</span>
+            <span><input type="checkbox" name="game-filter" id="" data-game-name="Final Fantasy VIII"/> FF VIII</span>
+            <span><input type="checkbox" name="game-filter" id="" data-game-name="Final Fantasy IX"/> FF IX</span>
+            <span><input type="checkbox" name="game-filter" id="" data-game-name="Final Fantasy X"/> FF X</span>
+            <span><input type="checkbox" name="game-filter" id="" data-game-name="Final Fantasy X-2"/> FF X-2</span>
+            <span><input type="checkbox" name="game-filter" id="" data-game-name="Final Fantasy XII"/> FF XII</span>
+            <span><input type="checkbox" name="game-filter" id="" data-game-name="Final Fantasy XIII"/> FF XIII</span>
+            <span><input type="checkbox" name="game-filter" id="" data-game-name="Final Fantasy XIII-2"/> FF XIII-2</span>
+            <span><input type="checkbox" name="game-filter" id="" data-game-name="Final Fantasy XV"/> FF XV</span>
             <span><input type="checkbox" name="game-filter" id="" data-game-name="Final Fantasy BE"/> FF BE</span>
           </div>
         </div>
 
         <div className="seeker-section">
           <button className="feature-btn" onClick={toogleSearch}>
-            <div className="section-title" >
+            <div className="section-title">
               <i className="fas fa-search"></i> Search
             </div>
           </button>

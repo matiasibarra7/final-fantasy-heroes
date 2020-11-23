@@ -19,6 +19,28 @@ function Section2 (props) {
         return "Final Fantasy 03";
       case "Final Fantasy IV":
         return "Final Fantasy 04";
+      case "Final Fantasy V":
+        return "Final Fantasy 05";
+      case "Final Fantasy VI":
+        return "Final Fantasy 06";
+      case "Final Fantasy VII":
+        return "Final Fantasy 07";
+      case "Final Fantasy VIII":
+        return "Final Fantasy 08";
+      case "Final Fantasy IX":
+        return "Final Fantasy 09";
+      case "Final Fantasy X":
+        return "Final Fantasy 10";
+      case "Final Fantasy X-2":
+        return "Final Fantasy 10-2";
+      case "Final Fantasy XII":
+        return "Final Fantasy 12";
+      case "Final Fantasy XIII":
+        return "Final Fantasy 13";
+      case "Final Fantasy XIII-2":
+        return "Final Fantasy 13-2";
+      case "Final Fantasy XV":
+        return "Final Fantasy 15";
       case "Final Fantasy BE":
           return "Final Fantasy Brave Exvius";
       default:
@@ -82,7 +104,7 @@ function Section2 (props) {
         <div className="character-container">
           <h2>Character's Details</h2>
           
-            {props.match.params.id? '' : <div style={{fontWeight:"bold"}}>Random character. If you are looking for one in particular, select it from the character list :) </div>}
+            {props.match.params.id? '' : <div style={{fontWeight:"bold", marginBottom:"1rem"}}>Random character. If you are looking for one in particular, select it from the character list :) </div>}
 
             {item.length?
               <div className="specific-details">

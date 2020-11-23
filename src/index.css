@@ -12,6 +12,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
   /* background: linear-gradient(to bottom right, #7768AE, #E15554, #E1BC29, #57C78B, #ADD8E6, #7768AE); */
 
+  background-image: url("cloud-sephi.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
 }
 
 code {
