@@ -5,13 +5,15 @@ import Banner from "../Banner/Banner"
 
 function Section1 () {
   const [error, setError] = useState(null);
-  const [isLoaded, setIsLoaded] = useState(false);
   const [itemsToShow, setItems] = useState([]);
   const [allItems, setAllItems] = useState([]);
+  const [isLoaded, setIsLoaded] = useState(false);
   
 
   // esta función de efecto actua como componentDidMount
-  useEffect(() => {
+  useEffect((isLoaded) => {
+
+    
     fetch("https://www.moogleapi.com/api/v1/characters")
       .then(res => res.json())
       .then(
@@ -115,8 +117,8 @@ function Section1 () {
         <div className="filter-section">
           <button className="feature-btn" onClick={toogleFilter}>
             <div className="section-title" >
-                <i className="fas fa-caret-right"></i>
-                <i className="fas fa-caret-down"></i> Filter
+              <i className="fas fa-caret-right"></i>
+              <i className="fas fa-caret-down"></i> Filter
             </div>
           </button>
           <div className="game-filter-container" onChange={gameFilter} id="sagaFilter">

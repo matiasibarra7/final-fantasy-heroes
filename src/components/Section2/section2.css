@@ -13,7 +13,7 @@
 
 .portrait {
   max-width: 240px;
-  border: 1px solid black;
+  /* border: 1px solid black; */
 }
 
 .portrait img {
@@ -32,6 +32,15 @@
 
 .attr-title {
   font-weight: bold;
+}
+
+.feature-btn.random {
+  margin:0 0 1rem;
+  background-color:#3DB876;
+}
+
+.feature-btn.random:hover {
+  background-color: #47C281;
 }
 
 @media(min-width:540px) {

@@ -3,6 +3,7 @@ import Navbar from './components/Navbar/NavBar'
 import Section1 from './components/Section1/Section1'
 import Section2 from './components/Section2/Section2'
 import Section3 from './components/Section3/Section3'
+import NotFound from './components/NotFound/NotFound'
 import { Route, Switch } from 'react-router-dom';
 
 
@@ -20,11 +21,11 @@ function App() {
 
       <main className="container-zone">
         <Switch >
-          <Route path="/final-fantasy-heroes/section-2/:id" component= { Section2 }></Route>
-          <Route path="/final-fantasy-heroes/section-2" component= { Section2 }></Route>
+          <Route path="/final-fantasy-heroes/section-2/:id?" component= { Section2 }></Route>
           <Route path="/final-fantasy-heroes/section-3" component= { Section3 }></Route>
-          <Route path="/final-fantasy-heroes" component= { Section1 }></Route>
-          <Route path="/" component= { Section1 }></Route>
+          <Route exact path="/final-fantasy-heroes" component= { Section1 }></Route>
+          <Route exact path="/" component= { NotFound }></Route>
+          <Route component= { NotFound }></Route>
         </Switch >
       </main>
     </div>

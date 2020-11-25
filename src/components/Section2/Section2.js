@@ -48,22 +48,21 @@ function Section2 (props) {
     }
   }
 
+  const fetchCharacter = (idCharacter = 'random') => {
 
-  // esta función de efecto actua como componentDidMount
-  useEffect(() => {
-    // llama al ep para encontrar el héroe
-    fetch(`https://www.moogleapi.com/api/v1/characters/${props.match.params.id? props.match.params.id : 'random'}`)
+    setIsLoaded(false)
+    fetch(`https://www.moogleapi.com/api/v1/characters/${idCharacter}`)
       .then(res => res.json())
       .then(
         (character) => {
-          setItem(props.match.params.id? character : [character]);
+          setItem(idCharacter !== 'random'? character : [character]);
 
           fetch(`https://www.moogleapi.com/api/v1/games`)
             .then(res => res.json())
             .then(
               (games) => {
                 
-                let gameBelonging = props.match.params.id? character[0].origin : character.origin
+                let gameBelonging = idCharacter !== 'random'? character[0].origin : character.origin
                 // console.log(gameBelonging);
                 // console.log("parseado: " + parseGameTitle(gameBelonging));
                 gameBelonging = parseGameTitle(gameBelonging)
@@ -72,17 +71,11 @@ function Section2 (props) {
                 
                 document.querySelector(".container-zone").classList.add('section-two')
 
-                setIsLoaded(true);
                 setGame(gameFound);
-              },
-
-              (error) => {
                 setIsLoaded(true);
-                setError(error);
+                
               }
-
             )
-
         },
         // Nota: es importante manejar errores aquí y no en 
         // un bloque catch() para que no interceptemos errores
@@ -92,7 +85,13 @@ function Section2 (props) {
           setError(error);
         }
       )
-  }, []) //Este array hace que no se ejecute eternamente el pedido ajax, averiguar
+  }
+
+  // esta función de efecto actua como componentDidMount
+  useEffect(() => {
+    // llama al ep para encontrar el héroe
+    fetchCharacter(props.match.params.id)
+  }, [props.match.params.id]) //Este array hace el efecto se ejecute solo cuando cambia este atributo
 
   if (error) {
     return <div>Error: {error.message}</div>;
@@ -104,7 +103,13 @@ function Section2 (props) {
         <div className="character-container">
           <h2>Character's Details</h2>
           
-            {props.match.params.id? '' : <div style={{fontWeight:"bold", marginBottom:"1rem"}}>Random character. If you are looking for one in particular, select it from the character list :) </div>}
+            {props.match.params.id? '' : <div style={{fontWeight:"bold", marginBottom:"1rem"}}>Random character. If you are looking for one in particular, select it from the character list :) or push...</div>}
+
+            <button className="feature-btn random" onClick={()=> fetchCharacter()}>
+              <div className="section-title" >
+                <i className="fas fa-random"></i> Random
+              </div>
+            </button>
 
             {item.length?
               <div className="specific-details">
