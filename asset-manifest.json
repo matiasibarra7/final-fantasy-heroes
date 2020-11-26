@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/final-fantasy-heroes/static/css/main.5921f5ff.chunk.css",
-    "main.js": "/final-fantasy-heroes/static/js/main.ae5a2a15.chunk.js",
-    "main.js.map": "/final-fantasy-heroes/static/js/main.ae5a2a15.chunk.js.map",
+    "main.js": "/final-fantasy-heroes/static/js/main.d76be0ea.chunk.js",
+    "main.js.map": "/final-fantasy-heroes/static/js/main.d76be0ea.chunk.js.map",
     "runtime-main.js": "/final-fantasy-heroes/static/js/runtime-main.dc252f0f.js",
     "runtime-main.js.map": "/final-fantasy-heroes/static/js/runtime-main.dc252f0f.js.map",
     "static/js/2.784ed41c.chunk.js": "/final-fantasy-heroes/static/js/2.784ed41c.chunk.js",
@@ -16,6 +16,6 @@
     "static/js/runtime-main.dc252f0f.js",
     "static/js/2.784ed41c.chunk.js",
     "static/css/main.5921f5ff.chunk.css",
-    "static/js/main.ae5a2a15.chunk.js"
+    "static/js/main.d76be0ea.chunk.js"
   ]
 }
