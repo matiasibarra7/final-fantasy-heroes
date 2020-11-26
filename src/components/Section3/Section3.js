@@ -8,7 +8,7 @@ function Section3 () {
     <>
     <div style={{textAlign: "center"}}>Under construction...</div>
     <figure style={{maxWidth:"360px", margin:"0 auto"}}>
-      <img src="img/UC-Sign.png" alt="Under construction..." style={{width:"100%"}}/>
+      <img src="final-fantasy-heroes/img/UC-Sign.png" alt="Under construction..." style={{width:"100%"}}/>
     </figure>
     <div style={{display: "none"}}>
       <p>You clicked {count} times</p>

@@ -150,10 +150,12 @@ function Section1 () {
           <input className="hero-seeker" id="heroSeeker" onKeyUp={searchHero} placeholder="Type to search a Hero"/>
         </div>
 
+        <div className="results-counter"><b>Character Count:</b> {itemsToShow.length} </div>
+
         <div className="characters-container">
           {itemsToShow.map(item => {
             return (
-              <Link to={`/final-fantasy-heroes/section-2/${item.id}`} key={item.id} className="character-card">
+              <Link to={`/section-2/${item.id}`} key={item.id} className="character-card">
                 <figure className="avatar">
                   <img src={item.pictures.length? item.pictures[0].url : "/final-fantasy-heroes/img/no-picture.png"} alt={item.name}/>
                 </figure>

@@ -6,9 +6,9 @@ function NavBar() {
   return (
     <nav>
       <ul className="primary-navbar">
-        <NavLink exact to="/final-fantasy-heroes" className="element">Characters List</NavLink>
-        <NavLink to="/final-fantasy-heroes/section-2" className="element">Details</NavLink>
-        <NavLink to="/final-fantasy-heroes/section-3" className="element">Section 3</NavLink>
+        <NavLink exact to="/" className="element">Characters List</NavLink>
+        <NavLink to="/section-2" className="element">Details</NavLink>
+        <NavLink to="/section-3" className="element">Section 3</NavLink>
       </ul>
     </nav>
   );

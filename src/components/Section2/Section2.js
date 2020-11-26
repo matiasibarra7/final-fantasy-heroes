@@ -91,6 +91,7 @@ function Section2 (props) {
   useEffect(() => {
     // llama al ep para encontrar el héroe
     fetchCharacter(props.match.params.id)
+    // eslint-disable-next-line
   }, [props.match.params.id]) //Este array hace el efecto se ejecute solo cuando cambia este atributo
 
   if (error) {

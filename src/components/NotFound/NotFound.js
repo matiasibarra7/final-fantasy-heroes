@@ -11,7 +11,7 @@ function NotFound () {
         <img src={`final-fantasy-heroes/img/tiduscrying.jpg`} alt="sad..." style={{width:"100%"}}/>
       </figure>
       <div style={{textAlign:"center"}}>
-        <Link to="/final-fantasy-heroes" >Take me to the Homepage</Link>
+        <Link to="/" >Take me to the Homepage</Link>
       </div>
     </div>
   );
