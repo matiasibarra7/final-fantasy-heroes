@@ -8,7 +8,7 @@ function NotFound () {
     <div style={{padding: "2rem"}}>
       <div style={{textAlign: "center"}}>Not Found...</div>
       <figure style={{maxWidth:"360px", margin:"0 auto"}}>
-        <img src={`final-fantasy-heroes/img/tiduscrying.jpg`} alt="sad..." style={{width:"100%"}}/>
+        <img src={`/final-fantasy-heroes/img/tiduscrying.jpg`} alt="sad..." style={{width:"100%"}}/>
       </figure>
       <div style={{textAlign:"center"}}>
         <Link to="/" >Take me to the Homepage</Link>
