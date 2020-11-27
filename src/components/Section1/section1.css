@@ -15,8 +15,8 @@
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  width: 135px;
-  height: 170px;
+  width: 165px;
+  height: 165px;
   margin-bottom: 0.4rem;
   justify-content: space-evenly;
   border-radius: 5px;
@@ -46,23 +46,50 @@
 }
 
 
-/*TEST HOVER*/
-.character-card.test {
-  box-shadow: 0px 0px 10px rgb(100, 100, 100);
-  background-color: #57C78B;
-  height: 240px;
+/* Test Shine effect */
+/* Credit: https://jsfiddle.net/AntonTrollback/nqQc7/ */
+.character-card {
+  position: relative;
+  overflow: hidden;
 }
 
-.character-card.test .avatar {
-  width: 70px;
+.character-card:after {
+  content: "";
+  position: absolute;
+  top: -110%;
+  left: -210%;
+  width: 200%;
+  height: 200%;
+  opacity: 0;
+  transform: rotate(30deg);
+  
+  background: rgba(255, 255, 255, 0.13);
+  background: linear-gradient(
+    to right, 
+    rgba(255, 255, 255, 0.13) 0%,
+    rgba(255, 255, 255, 0.13) 77%,
+    rgba(255, 255, 255, 0.5) 92%,
+    rgba(255, 255, 255, 0.0) 100%
+  );
 }
 
-.character-card.test .saga {
-  visibility: visible;
+/* Hover state - trigger effect */
+
+.character-card:hover:after {
   opacity: 1;
+  top: -45%;
+  left: -30%;
+  transition-property: left, top, opacity;
+  transition-duration: 1s, 1s, 0.20s;
+  transition-timing-function: ease;
 }
 
-/*END TEST*/
+/* Active state */
+
+.character-card:active:after {
+  opacity: 0;
+}
+/* FIN Test Shine effect */
 
 
 #sagaFilter {
@@ -221,3 +248,5 @@
   visibility: visible;
 }
 /* FIN Buscador */
+
+

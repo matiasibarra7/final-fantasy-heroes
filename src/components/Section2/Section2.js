@@ -6,6 +6,7 @@ function Section2 (props) {
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [item, setItem] = useState([]);
+  const [random, setRandom] = useState(true);
 
   const [gameFound, setGame] = useState([]);
 
@@ -73,6 +74,9 @@ function Section2 (props) {
 
                 setGame(gameFound);
                 setIsLoaded(true);
+
+                idCharacter === "random"? setRandom(true) : setRandom(false)
+                
                 
               }
             )
@@ -104,7 +108,7 @@ function Section2 (props) {
         <div className="character-container">
           <h2>Character's Details</h2>
           
-            {props.match.params.id? '' : <div style={{fontWeight:"bold", marginBottom:"1rem"}}>Random character. If you are looking for one in particular, select it from the character list :) or push...</div>}
+            {random? <div style={{fontWeight:"bold", marginBottom:"1rem"}}>Random character. If you are looking for one in particular, select it from the character list :) or push...</div> : ''}
 
             <button className="feature-btn random" onClick={()=> fetchCharacter()}>
               <div className="section-title" >
@@ -115,7 +119,7 @@ function Section2 (props) {
             {item.length?
               <div className="specific-details">
                 <figure className="portrait">
-                  <img src={item[0].pictures.length? item[0].pictures[0].url : "../img/no-picture.png"} alt={item[0].pictures.length? item[0].name : "not-found"}/>
+                  <img src={item[0].pictures.length? item[0].pictures[0].url : "/final-fantasy-heroes/img/no-picture.png"} alt={item[0].pictures.length? item[0].name : "not-found"}/>
                 </figure>
                 <div className="character-details">
                   <div className="details-field"><span className="attr-title">Name:</span> {item[0].name}</div>
