@@ -7,8 +7,8 @@ function NavBar() {
     <nav>
       <ul className="primary-navbar">
         <NavLink exact to="/" className="element">Characters List</NavLink>
-        <NavLink to="/section-2" className="element">Details</NavLink>
-        <NavLink to="/section-3" className="element">Section 3</NavLink>
+        <NavLink to="/search" className="element">Search & Filter</NavLink>
+        <NavLink to="/details" className="element">Details</NavLink>
       </ul>
     </nav>
   );

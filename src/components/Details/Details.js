@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import './section2.css'
+import './details.css'
 
-function Section2 (props) {
+function Details (props) {
   // Declara una nueva variable de estado, que llamaremos "count".
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
@@ -159,4 +159,4 @@ function Section2 (props) {
 }
 
 
-export default Section2;
+export default Details;

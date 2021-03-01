@@ -1,11 +1,11 @@
 import React, {useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
-import './section1.css'
-import Banner from "../Banner/Banner"
+import './search.css'
 
-function Section1 () {
+
+function Section3 () {
   const [error, setError] = useState(null);
-  const [itemsToShow, setItems] = useState([]);
+  const [itemsToShow, setItemsToShow] = useState([]);
   const [allItems, setAllItems] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false);
   
@@ -25,7 +25,7 @@ function Section1 () {
           document.querySelector(".container-zone").classList.remove('section-two')
 
           setIsLoaded(true);
-          setItems(characters);
+          setItemsToShow([]);
         },
         // Nota: es importante manejar errores aquí y no en 
         // un bloque catch() para que no interceptemos errores
@@ -57,11 +57,11 @@ function Section1 () {
 
     // Si hay algo escrito en el buscador, muestro los encontrados
     if (word !== '') {
-      setItems(found);
+      setItemsToShow(found);
 
       // Si no hay nada en el buscador, muestro todos
     } else {
-      setItems(allItems)
+      setItemsToShow([])
     }
   };
 
@@ -94,11 +94,11 @@ function Section1 () {
         return gamesFiltered.includes(el.origin)
       })
 
-      setItems(itemsFiltered);
+      setItemsToShow(itemsFiltered);
 
     } else {
       // Si no hay checkbox marcados, dibujo todos
-      setItems(allItems)
+      setItemsToShow([])
     }
     console.log(allItems);
   };
@@ -111,7 +111,6 @@ function Section1 () {
   } else {
     return (
       <>
-        < Banner />
         <div style={{fontWeight:"bold", paddingLeft:"1rem"}}>*Need to fix filter and search combined</div>
 
         <div className="filter-section">
@@ -150,12 +149,16 @@ function Section1 () {
           <input className="hero-seeker" id="heroSeeker" onKeyUp={searchHero} placeholder="Type to search a Hero"/>
         </div>
 
-        <div className="results-counter"><b>Character Count:</b> {itemsToShow.length} </div>
+        {itemsToShow.length? 
+        <div className="results-counter"><b>Characters Found:</b> {itemsToShow.length} </div>
+        :
+        <></>
+        }
 
         <div className="characters-container">
           {itemsToShow.map(item => {
             return (
-              <Link to={`/section-2/${item.id}`} key={item.id} className="character-card shiny-test">
+              <Link to={`/details/${item.id}`} key={item.id} className="character-card shiny-test">
                 <figure className="avatar">
                   <img src={item.pictures.length? item.pictures[0].url : "/final-fantasy-heroes/img/no-picture.png"} alt={item.name}/>
                 </figure>
@@ -175,5 +178,5 @@ function Section1 () {
 
 }
   
-export default Section1;
+export default Section3;
     

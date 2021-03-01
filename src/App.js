@@ -1,8 +1,8 @@
 import React from 'react';
 import Navbar from './components/Navbar/NavBar'
-import Section1 from './components/Section1/Section1'
-import Section2 from './components/Section2/Section2'
-import Section3 from './components/Section3/Section3'
+import Home from './components/Home/Home'
+import Details from './components/Details/Details'
+import Search from './components/Search/Search'
 import NotFound from './components/NotFound/NotFound'
 import { Route, Switch, HashRouter } from 'react-router-dom';
 
@@ -22,9 +22,9 @@ function App() {
 
         <main className="container-zone">
           <Switch >
-            <Route path="/section-2/:id?" component= { Section2 }></Route>
-            <Route path="/section-3" component= { Section3 }></Route>
-            <Route exact path="/" component= { Section1 }></Route>
+            <Route path="/details/:id?" component= { Details }></Route>
+            <Route path="/search" component= { Search }></Route>
+            <Route exact path="/" component= { Home }></Route>
             <Route component= { NotFound }></Route>
           </Switch >
         </main>
