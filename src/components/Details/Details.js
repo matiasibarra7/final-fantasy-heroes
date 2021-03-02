@@ -138,7 +138,7 @@ function Details (props) {
               <figure style={{ width: "100", maxWidth: "480px", margin: "2rem auto", backgroundColor:"white"}}>
                   {
                     gameFound[0].title === "Final Fantasy Brave Exvius"? 
-                      <img src="/final-fantasy-heroes/img/FF-BE.png" alt="Final fantasy BE"/>
+                      <img src="/final-fantasy-heroes/img/FF-BE.png" alt="Final fantasy BE" style={{width: "100%"}}/>
                       :
                       <img src={gameFound[0].picture? gameFound[0].picture : "../img/no-picture.png"} alt={gameFound[0].picture? gameFound[0].title : "not-found"} style={{width: "100%"}}/>
                   }

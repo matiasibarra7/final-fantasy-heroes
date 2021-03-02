@@ -6,6 +6,7 @@ import './search.css'
 function Section3 () {
   const [error, setError] = useState(null);
   const [itemsToShow, setItemsToShow] = useState([]);
+  const [itemsFilteredAux, setItemsFilteredAux] = useState([])
   const [allItems, setAllItems] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false);
   
@@ -51,10 +52,19 @@ function Section3 () {
     const seeker = document.getElementById('heroSeeker');
     const word = seeker.value.toLowerCase(); // Convierto a lowerCase para poder hacer una busqueda case insensitive
 
-    const found = allItems.filter(hero => {
-      return hero.name.toLowerCase().includes(word) // Convierto a lowerCase para poder hacer una busqueda case insensitive
-    });
-
+    let found 
+    // Si ya hay filtro por juego, busco solo ahí
+    if (itemsFilteredAux.length) {
+      found = itemsFilteredAux.filter(hero => {
+        return hero.name.toLowerCase().includes(word) // Convierto a lowerCase para poder hacer una busqueda case insensitive
+      });
+    } else {
+      // Si no hay filtro de juego, busco en todos los items
+      found = allItems.filter(hero => {
+        return hero.name.toLowerCase().includes(word) // Convierto a lowerCase para poder hacer una busqueda case insensitive
+      });
+    }
+    
     // Si hay algo escrito en el buscador, muestro los encontrados
     if (word !== '') {
       setItemsToShow(found);
@@ -95,11 +105,17 @@ function Section3 () {
       })
 
       setItemsToShow(itemsFiltered);
+      setItemsFilteredAux(itemsFiltered)
 
     } else {
-      // Si no hay checkbox marcados, dibujo todos
+      // Si no hay checkbox marcados, no dibujo ninguno
       setItemsToShow([])
+      setItemsFilteredAux([])
     }
+
+    // limpio el buscador para evitar conflictos
+    document.getElementById('heroSeeker').value = ""
+
     console.log(allItems);
   };
 
@@ -111,7 +127,7 @@ function Section3 () {
   } else {
     return (
       <>
-        <div style={{fontWeight:"bold", paddingLeft:"1rem"}}>*Need to fix filter and search combined</div>
+        <div style={{paddingLeft:"1rem", paddingTop:"1rem"}}>You can search for a character by his participation in a game or by his name</div>
 
         <div className="filter-section">
           <button className="feature-btn" onClick={toogleFilter}>
