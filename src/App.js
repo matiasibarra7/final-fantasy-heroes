@@ -12,7 +12,7 @@ function App() {
     <HashRouter basename='/'>
       <div className="App">
         <header>
-          <h1 style={{textAlign: "center"}}>Final Fantasy Heroes</h1>
+          <h1 className="center-text">Final Fantasy Heroes</h1>
           <div className="myGit">
             <div><a href="https://github.com/matiasibarra7" target="_black"><i className="fab fa-github" style={{color: "black"}}></i></a></div>
             <div><a href="https://linkedin.com/in/ibarra-nahuel-matias" target="_black"><i className="fab fa-linkedin" style={{color: "#0e76a8"}}></i></a></div>

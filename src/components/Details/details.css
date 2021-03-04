@@ -24,10 +24,26 @@
   margin: 0.5rem 0;
 }
 
+.random-text {
+  font-weight: bold;
+  margin-bottom: 1rem
+}
+
 .game-container {
   display: flex;
   flex-direction: column;
   padding: 0 1rem 1rem;
+}
+
+.game-image {
+  width: 100%;
+  max-width: 480px;
+  margin: 2rem auto;
+  background-color:white
+}
+
+.game-image img {
+  width: 100%;
 }
 
 .attr-title {

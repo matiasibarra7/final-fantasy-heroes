@@ -108,7 +108,7 @@ function Details (props) {
         <div className="character-container">
           <h2>Character's Details</h2>
           
-            {random? <div style={{fontWeight:"bold", marginBottom:"1rem"}}>Random character. If you are looking for one in particular, select it from the character list :) or push...</div> : ''}
+            {random? <div className="random-text">Random character. If you are looking for one in particular, select it from the character list :) or push...</div> : ''}
 
             <button className="feature-btn random" onClick={()=> fetchCharacter()}>
               <div className="section-title" >
@@ -135,13 +135,13 @@ function Details (props) {
         <div className="game-container">
           {gameFound.length? 
             <>
-              <figure style={{ width: "100", maxWidth: "480px", margin: "2rem auto", backgroundColor:"white"}}>
-                  {
-                    gameFound[0].title === "Final Fantasy Brave Exvius"? 
-                      <img src="/final-fantasy-heroes/img/FF-BE.png" alt="Final fantasy BE" style={{width: "100%"}}/>
-                      :
-                      <img src={gameFound[0].picture? gameFound[0].picture : "../img/no-picture.png"} alt={gameFound[0].picture? gameFound[0].title : "not-found"} style={{width: "100%"}}/>
-                  }
+              <figure className="game-image">
+                {
+                  gameFound[0].title === "Final Fantasy Brave Exvius"? 
+                    <img src="/final-fantasy-heroes/img/FF-BE.png" alt="Final fantasy BE"/>
+                    :
+                    <img src={gameFound[0].picture? gameFound[0].picture : "../img/no-picture.png"} alt={gameFound[0].picture? gameFound[0].title : "not-found"}/>
+                }
               </figure>
               <div><span className="attr-title">Title:</span> {gameFound[0].title}</div>
               <div><span className="attr-title">Platform:</span> {gameFound[0].platform}</div>

@@ -17,7 +17,6 @@ function Home () {
       .then(res => res.json())
       .then(
         (characters) => {
-          console.log(characters)
           if (!isLoaded) {
             setAllItems(characters)
           }
@@ -35,13 +34,11 @@ function Home () {
           setError(error);
         }
       )
-  }, []);
+  }, [page]);
 
   function otherPage() {
     setPage(++page)
     setItemsToShow(allItems.slice(0,page * 28))
-    console.log("el numero de la paginas ", page)
-    console.log(allItems.slice(0,20*page))
   }
 
   if (error) {
@@ -53,7 +50,7 @@ function Home () {
       <>
         < Banner />
 
-        <h2 style={{textAlign:"center"}}>List of Character</h2>
+        <h2 className="center-text">List of Character</h2>
 
         <div className="characters-container">
           {itemsToShow.map(item => {
@@ -73,7 +70,7 @@ function Home () {
           })}
 
 
-          <button className="load-more" onClick={otherPage}>
+          <button className={`load-more ${page * 28 >= allItems.length? "hidden" : ""}`} onClick={otherPage}>
             <div className="section-title" >
               Load More
             </div>
